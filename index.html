@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>TB3 Mapper Support</title>
+<meta name="description" content="Support for TB3 Mapper, the iPhone LiDAR app that makes ROS 2 Nav2 maps.">
+<link rel="stylesheet" href="style.css"><link rel="icon" href="icon.png">
+</head>
+<body><main>
+<header><img src="icon.png" alt="TB3 Mapper icon"><div><h1>TB3 Mapper</h1><p class="sub">LiDAR robot maps for ROS 2 Nav2</p></div></header>
+
+<p>TB3 Mapper turns a short walk with your iPhone or iPad's LiDAR Scanner into a <code>map.pgm</code> + <code>map.yaml</code> that ROS 2 Nav2 loads directly.</p>
+
+<h2>Getting started</h2>
+<ol>
+<li>Mark the robot's start on the floor with tape. In the app, aim the + at it, point the phone the way the robot faces, and tap <strong>Set Start</strong>.</li>
+<li>Walk slowly, sweeping the floor and the bottom of the walls. Return to the start mark at the end.</li>
+<li>Tap <strong>Finish &amp; Export</strong>, then AirDrop the files or upload them to your PC.</li>
+<li>Run <code>ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=$HOME/maps/home.yaml</code> with the robot on the start mark.</li>
+</ol>
+
+<h2>Uploading to your PC</h2>
+<p>In the app, open Settings › Set up the PC receiver and send <code>tb3_map_receiver.py</code> to your computer. Run <code>python3 tb3_map_receiver.py</code>, then enter the address it prints in Settings › Upload to PC. Your phone and PC must be on the same Wi-Fi, and TCP port 8765 must be allowed through the firewall.</p>
+
+<h2>Troubleshooting</h2>
+<div class="card">
+<ul>
+<li><strong>"LiDAR required"</strong>: scanning needs an iPhone 12 Pro or later Pro model, or iPad Pro (2020 or later).</li>
+<li><strong>Walls look doubled</strong>: you moved too fast or tracking was lost. Scan again more slowly.</li>
+<li><strong>Tables block the map</strong>: lower the highest obstacle height in Settings.</li>
+<li><strong>Upload fails</strong>: check the Wi-Fi network, the PC firewall, and Settings › Privacy &amp; Security › Local Network on the iPhone.</li>
+<li><strong>Laser scan and map are rotated</strong>: set the initial yaw shown in the app (it is also written into the YAML).</li>
+</ul>
+</div>
+
+<h2>Contact</h2>
+<p>Questions or bug reports: <a href="mailto:luxlike@gmail.com">luxlike@gmail.com</a></p>
+<p><a href="privacy.html">Privacy Policy</a></p>
+<footer>TurtleBot is a trademark of Open Robotics. TB3 Mapper is an independent app and is not affiliated with or endorsed by Open Robotics or ROBOTIS.</footer>
+</main></body></html>
