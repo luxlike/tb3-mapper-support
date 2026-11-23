@@ -16,3 +16,4 @@ footer{color:var(--muted);font-size:14px;margin-top:48px}
 .lang{display:flex;justify-content:flex-end;gap:6px;font-size:15px;margin:-24px 0 24px}
 .lang a,.lang span{padding:4px 12px;border-radius:999px;text-decoration:none}
 .lang span{background:var(--card);font-weight:600}
+.promo{display:block;width:100%;aspect-ratio:16/9;height:auto;border-radius:14px;background:#0b111a;margin:24px 0 8px}
